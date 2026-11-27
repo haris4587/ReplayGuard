@@ -1,0 +1,41 @@
+[
+  {
+    "attempt_id": "attempt-1",
+    "before": {
+      "charged_cents": 0,
+      "fulfillment_count": 0,
+      "audit_count": 0
+    },
+    "after": {
+      "charged_cents": 2500,
+      "fulfillment_count": 1,
+      "audit_count": 0
+    }
+  },
+  {
+    "attempt_id": "attempt-2",
+    "before": {
+      "charged_cents": 2500,
+      "fulfillment_count": 1,
+      "audit_count": 0
+    },
+    "after": {
+      "charged_cents": 5000,
+      "fulfillment_count": 2,
+      "audit_count": 0
+    }
+  },
+  {
+    "attempt_id": "attempt-3",
+    "before": {
+      "charged_cents": 5000,
+      "fulfillment_count": 2,
+      "audit_count": 0
+    },
+    "after": {
+      "charged_cents": 7500,
+      "fulfillment_count": 3,
+      "audit_count": 0
+    }
+  }
+]

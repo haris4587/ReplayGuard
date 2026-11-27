@@ -1,0 +1,26 @@
+[
+  {
+    "seq": 1,
+    "attempt_id": "attempt-1",
+    "event_id": "payment-1042",
+    "payload_sha256": "df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b",
+    "outcome": "processed",
+    "note": "Charged 2500 cents and created one fulfillment for order-1042."
+  },
+  {
+    "seq": 2,
+    "attempt_id": "attempt-2",
+    "event_id": "payment-1042",
+    "payload_sha256": "df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b",
+    "outcome": "skipped",
+    "note": "Duplicate delivery skipped. No payment, fulfillment, or audit state changed."
+  },
+  {
+    "seq": 3,
+    "attempt_id": "attempt-3",
+    "event_id": "payment-1042",
+    "payload_sha256": "df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b",
+    "outcome": "skipped",
+    "note": "Duplicate delivery skipped. No payment, fulfillment, or audit state changed."
+  }
+]
