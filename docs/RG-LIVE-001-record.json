@@ -1,0 +1,90 @@
+{
+  "attempts": 2,
+  "bundle": {
+    "events": {
+      "body": "[\n  {\n    \"seq\": 1,\n    \"attempt_id\": \"attempt-1\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"processed\",\n    \"note\": \"Charged 2500 cents and created one fulfillment for order-1042.\"\n  },\n  {\n    \"seq\": 2,\n    \"attempt_id\": \"attempt-2\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"skipped\",\n    \"note\": \"Duplicate delivery skipped. No payment, fulfillment, or audit state changed.\"\n  },\n  {\n    \"seq\": 3,\n    \"attempt_id\": \"attempt-3\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"skipped\",\n    \"note\": \"Duplicate delivery skipped. No payment, fulfillment, or audit state changed.\"\n  }\n]\n",
+      "bytes": 870,
+      "sha256": "2695debed47e69b9e0b7800a696e34765ae2dc2aa09900293bf134e654cc126b",
+      "url": "https://raw.githubusercontent.com/haris4587/ReplayGuard/047ba8e3bf586003eec741200f8266ab23155d9c/fixtures/safe-events.json"
+    },
+    "executions": {
+      "body": "[\n  {\n    \"attempt_id\": \"attempt-1\",\n    \"before\": {\n      \"charged_cents\": 0,\n      \"fulfillment_count\": 0,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  },\n  {\n    \"attempt_id\": \"attempt-2\",\n    \"before\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  },\n  {\n    \"attempt_id\": \"attempt-3\",\n    \"before\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  }\n]\n",
+      "bytes": 744,
+      "sha256": "99a0ce503bc9b1320180fca9b26b5c04db16a1553ecbe93ff35266c1b360ad49",
+      "url": "https://raw.githubusercontent.com/haris4587/ReplayGuard/047ba8e3bf586003eec741200f8266ab23155d9c/fixtures/safe-executions.json"
+    }
+  },
+  "bundle_hash": "4a433662846e29bf59e370ef5bbe559346ba74a8f03371269910f1b552a5c39d",
+  "challenge": {
+    "author": "0xcD72fA5B6A496d84B4A10bCFF31D3B7c12346a9e",
+    "reason": "Recheck whether attempts 2 and 3 changed charged_cents or fulfillment_count despite being marked skipped. Judge the locked execution counters, not the allegation."
+  },
+  "head": "c7345d53026ac472cba3d8b8fcd1ff999602fa093a0d959bfca1a08487994536",
+  "owner": "0xcD72fA5B6A496d84B4A10bCFF31D3B7c12346a9e",
+  "phase": "FINALIZED",
+  "policy": {
+    "business_rule": "Each payment event represents an order for 2500 cents. Charge exactly 2500 cents and create exactly one fulfillment on the first successful processing. Duplicate deliveries must not charge or fulfill again. Skipping a duplicate without changing business state is permitted.",
+    "events_sha256": "2695debed47e69b9e0b7800a696e34765ae2dc2aa09900293bf134e654cc126b",
+    "evidence_commit": "047ba8e3bf586003eec741200f8266ab23155d9c",
+    "executions_sha256": "99a0ce503bc9b1320180fca9b26b5c04db16a1553ecbe93ff35266c1b360ad49",
+    "expected_attempts": 3,
+    "repository": "haris4587/ReplayGuard",
+    "retry_rule": "",
+    "schema": "replayguard/v1",
+    "state_rules": {
+      "audit_count": {
+        "first_delta": 0,
+        "retry_max": 0
+      },
+      "charged_cents": {
+        "first_delta": 2500,
+        "retry_max": 0
+      },
+      "fulfillment_count": {
+        "first_delta": 1,
+        "retry_max": 0
+      }
+    }
+  },
+  "policy_hash": "7498889c9ddd4682637c4511e302fbad652e10e8ad108595e43cd872c7fde28d",
+  "result": {
+    "deterministic": {
+      "coverage_incomplete": false,
+      "duplicate_attempts": [
+        "attempt-2",
+        "attempt-3"
+      ],
+      "exception_attempts": [],
+      "failures": []
+    },
+    "retrieval": {
+      "events": true,
+      "executions": true
+    },
+    "scope": "Observed counters and supplied attempts only; repository provenance does not authenticate a production system.",
+    "semantic": {
+      "cases": [
+        {
+          "attempt_id": "attempt-1",
+          "decision": "PERMITTED",
+          "quote": "Charged 2500 cents and created one fulfillment for order-1042.",
+          "reason": "First successful processing increased charged_cents by exactly 2500 and fulfillment_count by exactly 1, with no audit change. The note, processed outcome, and observed changes agree with the business and state rules."
+        },
+        {
+          "attempt_id": "attempt-2",
+          "decision": "PERMITTED",
+          "quote": "Duplicate delivery skipped. No payment, fulfillment, or audit state changed.",
+          "reason": "Duplicate delivery was skipped. Observed charged_cents remained 2500, fulfillment_count remained 1, and audit_count remained 0. No business state changed, as permitted; the challenge is not supported by the counters."
+        },
+        {
+          "attempt_id": "attempt-3",
+          "decision": "PERMITTED",
+          "quote": "Duplicate delivery skipped. No payment, fulfillment, or audit state changed.",
+          "reason": "Duplicate delivery was skipped. Observed charged_cents remained 2500, fulfillment_count remained 1, and audit_count remained 0. No business state changed, as permitted; the challenge is not supported by the counters."
+        }
+      ]
+    },
+    "status": "IDEMPOTENT"
+  },
+  "sequence": 6
+}

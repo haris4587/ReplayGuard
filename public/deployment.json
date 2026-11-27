@@ -1,0 +1,14 @@
+{
+  "network": "Studionet",
+  "chain_id": 61999,
+  "address": "0xf6A55682019D16592B8639A32b8798ba3c07bd58",
+  "status": "RG-LIVE-001 finalized as IDEMPOTENT after challenge and reassessment; six receipt commitments verified.",
+  "deployment_tx": "0x45fbd8469a287eaade8e978bf65c68595fd3c2b78b71da890ecb955eb2af8c2b",
+  "sample_audits": [
+    {
+      "id": "RG-LIVE-001",
+      "status": "IDEMPOTENT",
+      "phase": "FINALIZED"
+    }
+  ]
+}

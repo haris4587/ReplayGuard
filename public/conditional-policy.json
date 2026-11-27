@@ -1,0 +1,24 @@
+{
+  "schema": "replayguard/v1",
+  "repository": "haris4587/ReplayGuard",
+  "evidence_commit": "047ba8e3bf586003eec741200f8266ab23155d9c",
+  "business_rule": "Each payment event represents an order for 2500 cents. Charge exactly 2500 cents and create exactly one fulfillment on the first successful processing. Duplicate deliveries must not charge or fulfill again. Skipping a duplicate without changing business state is permitted.",
+  "retry_rule": "A duplicate may append at most one audit entry per attempt. It must not charge money or create fulfillment again.",
+  "state_rules": {
+    "charged_cents": {
+      "first_delta": 2500,
+      "retry_max": 0
+    },
+    "fulfillment_count": {
+      "first_delta": 1,
+      "retry_max": 0
+    },
+    "audit_count": {
+      "first_delta": 0,
+      "retry_max": 1
+    }
+  },
+  "expected_attempts": 3,
+  "events_sha256": "f7af674b7215e4ba5c5456d662d4b23ee289ab8d43c53a179aad3fb2ee84e186",
+  "executions_sha256": "04f18f17204e1e297b5a5e739866e56415ec7d049bbf0d6fbfbc325c7e667f66"
+}

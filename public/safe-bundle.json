@@ -1,0 +1,14 @@
+{
+  "events": {
+    "url": "https://raw.githubusercontent.com/haris4587/ReplayGuard/047ba8e3bf586003eec741200f8266ab23155d9c/fixtures/safe-events.json",
+    "body": "[\n  {\n    \"seq\": 1,\n    \"attempt_id\": \"attempt-1\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"processed\",\n    \"note\": \"Charged 2500 cents and created one fulfillment for order-1042.\"\n  },\n  {\n    \"seq\": 2,\n    \"attempt_id\": \"attempt-2\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"skipped\",\n    \"note\": \"Duplicate delivery skipped. No payment, fulfillment, or audit state changed.\"\n  },\n  {\n    \"seq\": 3,\n    \"attempt_id\": \"attempt-3\",\n    \"event_id\": \"payment-1042\",\n    \"payload_sha256\": \"df769f298bc9b0cebbd3c5ccda3ea1ed81baf49cf5eccf8a3d562458c4aa2b9b\",\n    \"outcome\": \"skipped\",\n    \"note\": \"Duplicate delivery skipped. No payment, fulfillment, or audit state changed.\"\n  }\n]\n",
+    "sha256": "2695debed47e69b9e0b7800a696e34765ae2dc2aa09900293bf134e654cc126b",
+    "bytes": 870
+  },
+  "executions": {
+    "url": "https://raw.githubusercontent.com/haris4587/ReplayGuard/047ba8e3bf586003eec741200f8266ab23155d9c/fixtures/safe-executions.json",
+    "body": "[\n  {\n    \"attempt_id\": \"attempt-1\",\n    \"before\": {\n      \"charged_cents\": 0,\n      \"fulfillment_count\": 0,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  },\n  {\n    \"attempt_id\": \"attempt-2\",\n    \"before\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  },\n  {\n    \"attempt_id\": \"attempt-3\",\n    \"before\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    },\n    \"after\": {\n      \"charged_cents\": 2500,\n      \"fulfillment_count\": 1,\n      \"audit_count\": 0\n    }\n  }\n]\n",
+    "sha256": "99a0ce503bc9b1320180fca9b26b5c04db16a1553ecbe93ff35266c1b360ad49",
+    "bytes": 744
+  }
+}

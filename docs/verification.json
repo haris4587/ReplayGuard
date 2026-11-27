@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-27T11:53:44.825Z",
+  "network": "Studionet",
+  "chain_id": 61999,
+  "contract": "0xf6A55682019D16592B8639A32b8798ba3c07bd58",
+  "source_sha256": "a0bdafbe5b5fad464537e903dfcc3dbd7ebac0ae25ce0e9e8fcdb0eb91283f10",
+  "deployed_source_matches": true,
+  "finalized_reads": true,
+  "records": [
+    {
+      "id": "RG-LIVE-001",
+      "status": "IDEMPOTENT",
+      "phase": "FINALIZED",
+      "head": "c7345d53026ac472cba3d8b8fcd1ff999602fa093a0d959bfca1a08487994536",
+      "receipts": 6,
+      "attempts": 2
+    }
+  ]
+}

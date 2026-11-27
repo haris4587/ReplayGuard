@@ -1,0 +1,77 @@
+{
+  "hash": "0x958b186e141fea3b852e9d64b98b54edf7af29160fd8805ca76087ce0c604c54",
+  "from_address": "0xcD72fA5B6A496d84B4A10bCFF31D3B7c12346a9e",
+  "to_address": "0xf6A55682019D16592B8639A32b8798ba3c07bd58",
+  "statusName": "FINALIZED",
+  "txExecutionResultName": "FINISHED_WITH_RETURN",
+  "lifecycle": {
+    "state": "finalized",
+    "outcome": "accepted"
+  },
+  "created_at": "2026-11-27T11:52:33.485143+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "num_of_initial_validators": 5,
+  "result_name": "MAJORITY_AGREE",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "0",
+    "result": 1,
+    "round_validators": [
+      "0x725Ab89db6A9DD886Ba71Bc5E63a01070C325bE3",
+      "0x62718FbDf0509A398aA525C152D60c1F7A9d33D3",
+      "0xE74a9088aD4d6dBf3C8cABcC0B91072d2a8c8afa",
+      "0x21e4F7ba6Ec0fbf70C019fbc0F9A797c3ed1F969",
+      "0x6DC61b906F74F44612c5545b0b79486133B3556d"
+    ],
+    "validator_votes_hash": [
+      "0xe0913b86577a9bc8cc8c1a013a85461ffabf327b80137c883b0e5e42105bf69d",
+      "0xe7bebb1634320b24d5095aee2916d7ef5cae6473e39b7a69b8292b403f4f50c3",
+      "0x0e25c2495705d158323a1e9893bca958fd6773054dba5f66c9eacf856f1cd1f1",
+      "0xdd96597f23c54e9fc5ea6babccb910e08fb060eea143e14e1ceac587735dc5d1",
+      "0x4989e76c00f1665d0f89b24dc79cbfd45fc241410c2b2e354d634dfbc64f8e5a"
+    ],
+    "validator_votes": [
+      1,
+      1,
+      3,
+      1,
+      3
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "AGREE",
+      "IDLE",
+      "AGREE",
+      "IDLE"
+    ]
+  },
+  "receipt_summary": true,
+  "consensus_votes": {
+    "0x21e4F7ba6Ec0fbf70C019fbc0F9A797c3ed1F969": "agree",
+    "0x62718FbDf0509A398aA525C152D60c1F7A9d33D3": "agree",
+    "0x6DC61b906F74F44612c5545b0b79486133B3556d": "idle",
+    "0x725Ab89db6A9DD886Ba71Bc5E63a01070C325bE3": "agree",
+    "0xE74a9088aD4d6dBf3C8cABcC0B91072d2a8c8afa": "idle"
+  },
+  "execution_receipts": [
+    {
+      "mode": "leader",
+      "vote": null,
+      "execution_result": "SUCCESS",
+      "processing_time": 354,
+      "contract_state_hash": "6cf35307c6e3b48067f7b3799cf30acf6602a062e8a6882440e959d99b5e3eba"
+    },
+    {
+      "mode": "validator",
+      "vote": "agree",
+      "execution_result": "SUCCESS",
+      "processing_time": 1358,
+      "contract_state_hash": "6cf35307c6e3b48067f7b3799cf30acf6602a062e8a6882440e959d99b5e3eba"
+    }
+  ]
+}
